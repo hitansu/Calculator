@@ -4,14 +4,33 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
+
+import static android.widget.LinearLayout.VERTICAL;
 
 
 public class CalculatorActivity extends ActionBarActivity {
+
+    ScrollView scrollView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator);
+        scrollView= (ScrollView) findViewById(R.id.calculatorContainer);
+
+        LinearLayout calculatorDashBoardView = getCalculatorDashBoardView();
+        scrollView.addView(calculatorDashBoardView);
+    }
+
+    private LinearLayout getCalculatorDashBoardView() {
+        LinearLayout dashBoardView= new LinearLayout(getApplicationContext());
+        dashBoardView.setOrientation(VERTICAL);
+
+        Button btnEmi= new Button(getApplicationContext());
+        return null;
     }
 
     @Override
